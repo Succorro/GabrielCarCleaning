@@ -1,6 +1,6 @@
-# Car Cleaners Web App
+# Gabriel Car Cleaning Web App
 
-This is a web application built for Car Cleaners, a professional car detailing and cleaning service. The app allows customers to book appointments, view available services, and manage their bookings online with a seamless and detailed user interface.
+This is a web application built for Gabriel Car Cleaning, a professional car detailing and cleaning service. The app allows customers to book appointments, view available services, and manage their bookings online with a seamless and detailed user interface.
 
 ## Features
 
