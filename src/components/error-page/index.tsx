@@ -6,10 +6,9 @@ export default function ErrorPage() {
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-4 text-left">
-      <h1>oops</h1>
-      <p>title</p>
-      <p className="font-mono">
-        <span className="mr-2">{error?.status}</span>
+      <h1 className='text-3xl font-bold'>Something Went Wrong</h1>
+      <p className="font-mono text-teal-800 font-bold">
+        <span className="mr-2 ">{error?.status}</span>
         <i>{error?.statusText || error?.message}</i>
       </p>
       <Button asChild>
