@@ -10,7 +10,7 @@ export default function Home() {
       <Helmet>
         <title>Gabriel Car Cleaning</title>
       </Helmet>
-      <Hero />
+      <Hero/>
       <Services/>
       <Stats/>
       <ContactForm/>

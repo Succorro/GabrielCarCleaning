@@ -1,18 +1,19 @@
-import { Menu } from "lucide-react"
+import {X, Menu } from "lucide-react"
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import { useState } from "react"
 
 export function Header() {
-
+  const [openMenu, setOpenMenu] = useState(false)
   return (
-    <div className="fixed -left-1 -top-1 flex w-[101vw] items-center justify-between border bg-teal-800 px-4 py-4 md:px-12">
+    <div className="fixed -left-1 -top-1 flex w-[101vw] h-[11vh] items-center justify-between border bg-teal-800 px-4 py-4 md:px-12">
       <a href="/" className="text-xs md:text-base">
         <img className="w-16" src="/GabrielCarCleaning.png" alt="logo" />
       </a>
       <div className="sm:hidden">
-        <DropdownMenu.Root>
+        <DropdownMenu.Root onOpenChange={()=> setOpenMenu(!openMenu)}>
           <DropdownMenu.Trigger asChild>
-            <button className="IconButton text-white " aria-label="Customise options">
-              <Menu />
+            <button className=" text-white transition-all duration-700 ease-in-out" aria-label="Customise options">
+              {openMenu ? <X/>: <Menu className='focus:border-none'/>}
             </button>
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal >
@@ -28,7 +29,9 @@ export function Header() {
                   <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
                     <a href="/#contact">Contact</a>
                   </DropdownMenu.Item>
-
+                  <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
+                    <a href="/#gallery">Gallery</a>
+                  </DropdownMenu.Item>
                 </div>
               </DropdownMenu.Content>
             </div>
