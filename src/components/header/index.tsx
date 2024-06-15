@@ -15,21 +15,23 @@ export function Header() {
               <Menu />
             </button>
           </DropdownMenu.Trigger>
-          <DropdownMenu.Portal className="static justify-center align-center items-center">
-            <DropdownMenu.Content className=" absolute -left-[94.5vw] bg-teal-800 w-[100vw] h-[100vh] mt-8 will-change-auto transition-all ease-in-out duration-700">
-              <div className="flex flex-col justify-center items-center  text-center align-center pt-10">
-                <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
-                  <a href="/">Home</a>
-                </DropdownMenu.Item>
-                <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
-                  <a href="/#services">Services</a>
-                </DropdownMenu.Item>
-                <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
-                  <a href="/#contact">Contact</a>
-                </DropdownMenu.Item>
+          <DropdownMenu.Portal >
+            <div className="static justify-center align-center items-center">
+              <DropdownMenu.Content className=" absolute -left-[94.5vw] bg-teal-800 w-[100vw] h-[100vh] mt-8 will-change-auto transition-all ease-in-out duration-700">
+                <div className="flex flex-col justify-center items-center  text-center align-center pt-10">
+                  <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
+                    <a href="/">Home</a>
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
+                    <a href="/#services">Services</a>
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
+                    <a href="/#contact">Contact</a>
+                  </DropdownMenu.Item>
 
-              </div>
-            </DropdownMenu.Content>
+                </div>
+              </DropdownMenu.Content>
+            </div>
           </DropdownMenu.Portal>
         </DropdownMenu.Root>
       </div>
