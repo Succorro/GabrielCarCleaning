@@ -40,8 +40,8 @@ export function Header() {
       </div>
       <div className="flex items-center gap-4 text-white font-bold max-sm:hidden">
         <a className={styles.a} href="/">Home</a>
-        <a className={styles.a} href="/#services">Services</a>
-        <a className={styles.a} href="/#contact">Contact</a>
+        <a className={styles.a} href="#services">Services</a>
+        <a className={styles.a} href="#contact">Contact</a>
       </div>
     </div>
   )
