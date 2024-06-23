@@ -1,11 +1,12 @@
 import {X, Menu } from "lucide-react"
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { useState } from "react"
+import DarkButton from "../ui/DarkButton"
 
-export function Header() {
+export function Header({setTheme, theme}) {
   const [openMenu, setOpenMenu] = useState(false)
   return (
-    <div className="fixed -left-1 -top-1 flex w-[101vw] h-[11vh] items-center justify-between border bg-teal-800 px-4 py-4 md:px-12">
+    <div className="fixed -left-1 -top-1 flex w-[101vw] h-[11vh] items-center justify-between border bg-teal-800 dark:bg-black px-4 py-4 md:px-12">
       <a href="/" className="text-xs md:text-base">
         <img className="w-16" src="/GabrielCarCleaning.png" alt="logo" />
       </a>
@@ -43,6 +44,7 @@ export function Header() {
         <a className={styles.a} href="#services">Services</a>
         <a className={styles.a} href="#contact">Contact</a>
         <a className={styles.a} href="#gallery">Gallery</a>
+        <DarkButton setTheme={setTheme} theme={theme}/>
       </div>
     </div>
   )
