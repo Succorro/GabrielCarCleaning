@@ -21,16 +21,16 @@ export function Header() {
               <DropdownMenu.Content className=" absolute -left-[94.5vw] bg-teal-800 w-[100vw] h-[100vh] mt-8 will-change-auto transition-all ease-in-out duration-700">
                 <div className="flex flex-col justify-center items-center  text-center align-center pt-10">
                   <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
-                    <a href="/">Home</a>
+                    <a href="#">Home</a>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
-                    <a href="/#services">Services</a>
+                    <a href="#services">Services</a>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
-                    <a href="/#contact">Contact</a>
+                    <a href="#contact">Contact</a>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item className=" text-4xl text-white font-bold py-10">
-                    <a href="/#gallery">Gallery</a>
+                    <a href="#gallery">Gallery</a>
                   </DropdownMenu.Item>
                 </div>
               </DropdownMenu.Content>
@@ -39,9 +39,10 @@ export function Header() {
         </DropdownMenu.Root>
       </div>
       <div className="flex items-center gap-4 text-white font-bold max-sm:hidden">
-        <a className={styles.a} href="/">Home</a>
+        <a className={styles.a} href="#">Home</a>
         <a className={styles.a} href="#services">Services</a>
         <a className={styles.a} href="#contact">Contact</a>
+        <a className={styles.a} href="#gallery">Gallery</a>
       </div>
     </div>
   )
