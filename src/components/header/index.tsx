@@ -11,10 +11,11 @@ export function Header({setTheme, theme}) {
         <img className="w-16" src="/GabrielCarCleaning.png" alt="logo" />
       </a>
       <div className="sm:hidden">
+      <DarkButton setTheme={setTheme} theme={theme}/>
         <DropdownMenu.Root onOpenChange={()=> setOpenMenu(!openMenu)}>
           <DropdownMenu.Trigger asChild>
             <button className="  transition-all duration-700 ease-in-out" aria-label="Customise options">
-              {openMenu ? <X/>: <Menu className='focus:border-none'/>}
+              {openMenu ? <X/>: <Menu className='focus:border-none dark:text-white'/>}
             </button>
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal >
