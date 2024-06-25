@@ -11,9 +11,9 @@ export default function Home() {
         <title>Gabriel Car Cleaning</title>
       </Helmet>
       <Hero/>
-      <Contact/>
       <Stats/>
       <Services/>
+      <Contact/>
     </>
   )
 }

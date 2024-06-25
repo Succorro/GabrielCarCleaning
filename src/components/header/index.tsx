@@ -26,13 +26,13 @@ export function Header({setTheme, theme}) {
                     <a href="#">Home</a>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item className=" text-4xl  font-bold py-10">
+                    <a href="#gallery">Gallery</a>
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item className=" text-4xl  font-bold py-10">
                     <a href="#services">Services</a>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item className=" text-4xl  font-bold py-10">
                     <a href="#contact">Contact</a>
-                  </DropdownMenu.Item>
-                  <DropdownMenu.Item className=" text-4xl  font-bold py-10">
-                    <a href="#gallery">Gallery</a>
                   </DropdownMenu.Item>
                 </div>
               </DropdownMenu.Content>
@@ -42,9 +42,9 @@ export function Header({setTheme, theme}) {
       </div>
       <div className="flex items-center gap-4  font-bold max-sm:hidden">
         <a className={styles.a} href="#">Home</a>
+        <a className={styles.a} href="#gallery">Gallery</a>
         <a className={styles.a} href="#services">Services</a>
         <a className={styles.a} href="#contact">Contact</a>
-        <a className={styles.a} href="#gallery">Gallery</a>
         <DarkButton setTheme={setTheme} theme={theme}/>
       </div>
     </div>

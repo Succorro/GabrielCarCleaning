@@ -9,7 +9,7 @@ const Stats = () => {
             <div className={boxStyle}>
                 <FaHourglassEnd size='40px' />
                 <div className="flex mt-3">
-                    <AnimatedCounter end={8} duration={1000}/>+ Years of Exdiverience
+                    <AnimatedCounter end={8} duration={1000}/>+ Years of Experience
                 </div>
             </div>
             <div className={boxStyle}>
