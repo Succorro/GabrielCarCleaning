@@ -8,10 +8,19 @@ const Contact = () => {
   const displayForm = () => {
     if(page === 1){
       return(
-        <SelectCar/>
+        <SelectCar setPage={setPage}/>
+      )
+    } else if (page === 2 ){
+      return(
+        <SelectPackage setPage={setPage}/>
+      )
+    } else if (page === 3) {
+      return (
+        <InputInformation setPage={setPage}/>
       )
     }
   }
+  console.log(page)
   return (
     <section id='contact' className="min-h-[100vh] bg-white text-Teal">
       <div className='mx-10 pt-10'>
@@ -31,7 +40,7 @@ const Contact = () => {
           </div>
         </div> 
       </div>
-      <div className='flex justify-center'>
+      <div className='flex flex-col items-center'>
         <Form
               initialSize="80px"
               expandedSize="500px"

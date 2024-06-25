@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SelectCar = () => {
+const SelectCar = ({setPage}) => {
   return (
     <div>SelectCar</div>
   )

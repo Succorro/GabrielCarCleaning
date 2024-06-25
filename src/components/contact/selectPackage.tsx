@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SelectPackage = () => {
+const SelectPackage = ({setPage}) => {
   return (
     <div>SelectPackage</div>
   )

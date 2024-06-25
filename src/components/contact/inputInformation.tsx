@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputInformation = () => {
+const InputInformation = ({setPage}) => {
   return (
     <div>InputInformation</div>
   )
