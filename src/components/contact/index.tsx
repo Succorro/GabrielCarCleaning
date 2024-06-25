@@ -16,6 +16,16 @@ const Contact = () => {
     additionalInfo: ''
   });
 
+  const handleSubmit = () => {
+    const contactInfo = {
+      vehicle: vehicle,
+      package: packge,
+      userInfo: userInfo
+    }
+
+    console.log(contactInfo)
+  }
+
   const displayForm = () => {
     if(page === 1){
       return(
@@ -27,13 +37,13 @@ const Contact = () => {
       )
     } else if (page === 3) {
       return (
-        <InputInformation setPage={setPage} userInfo={userInfo} setUserInfo={setUserInfo}/>
+        <InputInformation setPage={setPage} userInfo={userInfo} setUserInfo={setUserInfo} onSubmit={handleSubmit}/>
       )
     }
   }
 
   return (
-    <section id='contact' className="min-h-[100vh] bg-white text-Teal">
+    <section id='contact' className="min-h-[100vh] bg-white text-Teal mb-20">
       <div className='mx-10 pt-10'>
         <div className='-mx-4 flex flex-wrap'>
           <div className='w-full px-4'>
@@ -52,16 +62,9 @@ const Contact = () => {
         </div> 
       </div>
       <div className='flex flex-col items-center'>
-        <Form
-              initialSize="60px"
-              expandedSize="500px"
-              initialColor="#1d4ed8"
-              expandedColor="#F0F4F8"
-              buttonText="Start"
-              className=''
-          >
-            {displayForm()}
-          </Form>
+        <div className='shadow-lg flex items-center justify-center overflow-hidden bg-accent w-[600px] h-[600px]'>
+          {displayForm()}
+        </div>
       </div>
     </section>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '../ui/button'
 
-const InputInformation = ({setPage, userInfo, setUserInfo}) => {
+const InputInformation = ({setPage, userInfo, setUserInfo, onSubmit}) => {
     const handleChange = (e) => {
       const { name, value } = e.target;
       setUserInfo(prevInfo => ({
@@ -11,9 +11,9 @@ const InputInformation = ({setPage, userInfo, setUserInfo}) => {
     };
   return (
     <div className='flex flex-col items-center'>
-        <h2 className='text-4xl text-blue-800 mt-4 mb-10'>Contact Information</h2>
+        <h2 className='text-4xl text-blue-800 mb-10'>Contact Information</h2>
         <form className="flex flex-col">
-            <div className="mb-4">
+            <div className="">
                 <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="firstName"
@@ -71,7 +71,7 @@ const InputInformation = ({setPage, userInfo, setUserInfo}) => {
         </form>
         <div>
             <Button onClick={()=> setPage(2)} className='hover:bg-blue-800 bg-blue-700 mr-10'>Previous </Button>
-            <Button className='bg-green-700 hover:bg-green-900 '>Submit</Button>
+            <Button onClick={()=> onSubmit()}className='bg-green-700 hover:bg-green-900 '>Submit</Button>
         </div>
     </div>
   )

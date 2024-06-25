@@ -10,8 +10,8 @@ const SelectPackage = ({ setPage, packge, setPackage }) => {
 
     return (
         <div className='flex flex-col items-center'>
-            <h2 className='text-4xl text-blue-800 mt-4 mb-10'>Select a Package</h2>
-            <div className="flex flex-col items-start mb-36">
+            <h2 className='text-4xl text-blue-800 mb-10'>Select a Package</h2>
+            <div className="flex flex-col items-start mb-32">
                 {options.map((option) => (
                     <label
                         key={option.id}
