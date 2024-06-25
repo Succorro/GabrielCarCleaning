@@ -4,9 +4,18 @@ import SelectCar from './selectCar'
 import SelectPackage from './selectPackage'
 import InputInformation from './inputInformation'
 const Contact = () => {
-  const [page, setPage] = useState(1)
-  const [vehicle, setVehicle] = useState('')
-  const [packge, setPackage] = useState('')
+
+  const [page, setPage] = useState(1);
+  const [vehicle, setVehicle] = useState('');
+  const [packge, setPackage] = useState('');
+  const [userInfo, setUserInfo] = useState({
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    email: '',
+    additionalInfo: ''
+  });
+
   const displayForm = () => {
     if(page === 1){
       return(
@@ -18,11 +27,11 @@ const Contact = () => {
       )
     } else if (page === 3) {
       return (
-        <InputInformation setPage={setPage}/>
+        <InputInformation setPage={setPage} userInfo={userInfo} setUserInfo={setUserInfo}/>
       )
     }
   }
-  console.log(page)
+
   return (
     <section id='contact' className="min-h-[100vh] bg-white text-Teal">
       <div className='mx-10 pt-10'>

@@ -30,7 +30,7 @@ const SelectCar = ({setPage, vehicle, setVehicle}) => {
                 </button>
             ))}
         </div>
-        <Button onClick={()=> setPage(2)} className=' bg-blue-700 hover:bg-Blue '>Next </Button>
+        <Button onClick={()=> setPage(2)} className=' bg-blue-700 hover:bg-blue-800 '>Next </Button>
     </div>
   )
 }
