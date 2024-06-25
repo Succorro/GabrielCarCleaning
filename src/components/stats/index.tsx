@@ -8,21 +8,21 @@ const Stats = () => {
         <section className='flex flex-col sm:flex-row items-center mx-auto'>
             <div className={boxStyle}>
                 <FaHourglassEnd size='40px' />
-                <p className="flex mt-3">
-                    <AnimatedCounter end={8} duration={1000}/>+ Years of Experience
-                </p>
+                <div className="flex mt-3">
+                    <AnimatedCounter end={8} duration={1000}/>+ Years of Exdiverience
+                </div>
             </div>
             <div className={boxStyle}>
                 <IoCarSport size='40px'/>
-                <p className="flex mt-3">
+                <div className="flex mt-3">
                     Over&nbsp;<AnimatedCounter end={10000} duration={1000}/>&nbsp;Cars Detailed
-                </p>
+                </div>
             </div>
             <div className={boxStyle}>
                 <IoMdThumbsUp size='40px'/>
-                <p className="flex mt-3">
+                <div className="flex mt-3">
                     <AnimatedCounter end={100} duration={1000}/>% Satifaction Guarantee
-                </p>
+                </div>
             </div>
         </section>
     </div>

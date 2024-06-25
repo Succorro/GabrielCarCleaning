@@ -16,7 +16,6 @@ const Form = ({
     const handleOpen = useCallback(() => {
         if (!isOpen) {
             setIsOpen(true)
-            onOpen?.()
         }
     }, [isOpen])
 

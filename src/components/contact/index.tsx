@@ -1,6 +1,17 @@
+import { useState } from 'react'
 import Form from './form'
-
+import SelectCar from './selectCar'
+import SelectPackage from './selectPackage'
+import InputInformation from './inputInformation'
 const Contact = () => {
+  const [page, setPage] = useState(1)
+  const displayForm = () => {
+    if(page === 1){
+      return(
+        <SelectCar/>
+      )
+    }
+  }
   return (
     <section id='contact' className="min-h-[100vh] bg-white text-Teal">
       <div className='mx-10 pt-10'>
@@ -29,10 +40,7 @@ const Contact = () => {
               buttonText="Start"
               className=''
           >
-              <div className="p-6 flex flex-col items-center">
-                  <h2 className="text-2xl font-bold mb-4">My Custom Title</h2>
-                  <p className="text-center">This is my custom content with centered text.</p>
-              </div>
+            {displayForm()}
           </Form>
       </div>
     </section>
