@@ -4,7 +4,7 @@ import { useSpring, animated, config } from '@react-spring/web'
 const Form = ({
     initialSize = '60px',
     expandedSize = '300px',
-    initialColor = 'rgb(30 64 175)',
+    initialColor = '#1d4ed8',
     expandedColor = 'white',
     buttonText = 'Open',
     children,

@@ -5,10 +5,11 @@ import SelectPackage from './selectPackage'
 import InputInformation from './inputInformation'
 const Contact = () => {
   const [page, setPage] = useState(1)
+  const [vehicle, setVehicle] = useState('')
   const displayForm = () => {
     if(page === 1){
       return(
-        <SelectCar setPage={setPage}/>
+        <SelectCar setPage={setPage} vehicle={vehicle} setVehicle={setVehicle}/>
       )
     } else if (page === 2 ){
       return(
@@ -42,9 +43,9 @@ const Contact = () => {
       </div>
       <div className='flex flex-col items-center'>
         <Form
-              initialSize="80px"
+              initialSize="60px"
               expandedSize="500px"
-              initialColor="#172554"
+              initialColor="#1d4ed8"
               expandedColor="#F0F4F8"
               buttonText="Start"
               className=''
