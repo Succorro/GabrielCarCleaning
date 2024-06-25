@@ -6,6 +6,7 @@ import InputInformation from './inputInformation'
 const Contact = () => {
   const [page, setPage] = useState(1)
   const [vehicle, setVehicle] = useState('')
+  const [packge, setPackage] = useState('')
   const displayForm = () => {
     if(page === 1){
       return(
@@ -13,7 +14,7 @@ const Contact = () => {
       )
     } else if (page === 2 ){
       return(
-        <SelectPackage setPage={setPage}/>
+        <SelectPackage setPage={setPage} packge={packge} setPackage={setPackage}/>
       )
     } else if (page === 3) {
       return (

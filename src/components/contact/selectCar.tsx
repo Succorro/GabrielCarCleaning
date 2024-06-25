@@ -9,6 +9,7 @@ const SelectCar = ({setPage, vehicle, setVehicle}) => {
       ];
   return (
     <div className='flex flex-col items-center'>
+        <h2 className='text-4xl text-blue-800 mb-20'>Select a Car</h2>
         <div className="flex space-x-10 mb-36">
             {options.map((option) => (
                 <button
@@ -29,7 +30,7 @@ const SelectCar = ({setPage, vehicle, setVehicle}) => {
                 </button>
             ))}
         </div>
-        <Button onClick={()=> setPage(2)} className=' bg-blue-700 hover:bg-Blue -mb-40'>Next </Button>
+        <Button onClick={()=> setPage(2)} className=' bg-blue-700 hover:bg-Blue '>Next </Button>
     </div>
   )
 }
