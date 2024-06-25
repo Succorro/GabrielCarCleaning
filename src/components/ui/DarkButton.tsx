@@ -1,5 +1,5 @@
-import React from 'react';
-import {Sun, Moon} from 'lucide-react'
+import {LuSun, LuMoon} from 'react-icons/lu'
+
 const DarkButton = ({ theme, setTheme }) => {
   const toggleTheme = () => {
     setTheme(!theme);
@@ -16,7 +16,7 @@ const DarkButton = ({ theme, setTheme }) => {
           theme ? 'bg-yellow-500 -translate-x-2' : 'bg-gray-700 translate-x-full'
         }`}
       >
-        {theme ? <Sun className='w-5 -translate-x-0.5 -translate-y-1'/> : <Moon className='w-5 -translate-x-0.5 -translate-y-1'/>}
+        {theme ? <LuSun size='20px' className='-translate-x-0.5 -translate-y-0.5'/> : <LuMoon size='20px' className=' -translate-x-0.5 -translate-y-0.5'/>}
       </div>
     </button>
   );

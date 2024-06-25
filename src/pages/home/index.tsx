@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet'
 import { Hero } from 'src/components/hero'
 import  Services  from 'src/components/services'
 import Stats from 'src/components/stats'
-import ContactForm from 'src/components/contactForm'
+import Contact from 'src/components/contact'
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <title>Gabriel Car Cleaning</title>
       </Helmet>
       <Hero/>
-      <ContactForm/>
+      <Contact/>
       <Stats/>
       <Services/>
     </>

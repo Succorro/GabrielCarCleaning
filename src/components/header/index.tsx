@@ -1,4 +1,4 @@
-import {X, Menu } from "lucide-react"
+import {LuX, LuMenu } from 'react-icons/lu'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { useState } from "react"
 import DarkButton from "../ui/DarkButton"
@@ -15,7 +15,7 @@ export function Header({setTheme, theme}) {
         <DropdownMenu.Root onOpenChange={()=> setOpenMenu(!openMenu)}>
           <DropdownMenu.Trigger asChild>
             <button className="  transition-all duration-700 ease-in-out" aria-label="Customise options">
-              {openMenu ? <X/>: <Menu className='focus:border-none dark:text-white'/>}
+              {openMenu ? <LuX/>: <LuMenu className='focus:border-none dark:text-white'/>}
             </button>
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal >
