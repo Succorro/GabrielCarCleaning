@@ -2,7 +2,7 @@ import { useState } from 'react'
 import SelectCar from './selectCar'
 import SelectPackage from './selectPackage'
 import InputInformation from './inputInformation'
-import ErrorMessage from './ErrorMessage'
+import ThankYouMessage from './thanks'
 
 const Contact = () => {
   const initialUser = {
@@ -54,6 +54,7 @@ const Contact = () => {
         userInfo: userInfo
       }
       console.log(contactInfo)
+      setPage(4)
       // Here you would typically send the data to your backend
     }
   }
@@ -79,7 +80,14 @@ const Contact = () => {
         />
       )
     } else {
-      return (<p className='text-red-600'>Something went wrong please refresh page.</p>)
+      return (
+        <ThankYouMessage onClose={()=>{
+          setVehicle('');
+          setPackage('');
+          setUserInfo(initialUser);
+          setPage(1);
+        }}/>
+      )
     }
   }
 
@@ -89,15 +97,12 @@ const Contact = () => {
         <div className='-mx-4 flex flex-wrap'>
           <div className='w-full px-4'>
               <div className='mx-auto mb-[30px] max-w-[510px] text-center'>
-                  <span className='mb-2 block text-lg font-semibold text-Blue'>
+                  <span className='mb-2 block text-lg font-semibold text-blue-600'>
                       Contact Us
                   </span>
                   <h2 className='mb-3 text-3xl font-bold sm:text-4xl md:leading-[1.2] md:text-[40px]'>
                       Detailing Services
                   </h2>
-                  <p>
-                    Let us know about your vehicle!
-                  </p>
               </div>
           </div>
         </div> 
