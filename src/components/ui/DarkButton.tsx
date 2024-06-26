@@ -1,6 +1,11 @@
 import {LuSun, LuMoon} from 'react-icons/lu'
 
-const DarkButton = ({ theme = '', setTheme = ()=>{} }) => {
+interface HeaderProps {
+  setTheme: (theme: boolean) => void;
+  theme: boolean;
+}
+
+const DarkButton = ({ theme, setTheme}: HeaderProps) => {
   const toggleTheme = () => {
     setTheme(!theme);
     localStorage.setItem('theme', JSON.stringify(!theme));

@@ -2,7 +2,13 @@ import React, {useState} from 'react'
 import { Button } from '../ui/button'
 import ErrorMessage from './errorMessage';
 
-const SelectCar = ({setPage, vehicle, setVehicle}) => {
+interface HeaderProps {
+    setPage: (page: number) => void;
+    vehicle: string;
+    setVehicle: (vehicle: string) => void;
+  }
+
+const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
     const options = [
         { id: 'sedan', label: 'Sedan', img: '/sport-car.png' },
         { id: 'suv', label: 'SUV', img: '/car.png' },

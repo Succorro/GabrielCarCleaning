@@ -1,7 +1,11 @@
 import React from 'react'
 import { Button } from '../ui/button'
 
-const ThankYouMessage = ({ onClose }) => {
+interface HeaderProps {
+    onClose: () => void;
+  }
+
+const ThankYouMessage = ({ onClose }: HeaderProps) => {
   return (
     <div className="flex flex-col items-center justify-center bg-accent p-8">
       <h2 className="text-3xl font-bold text-blue-700 mb-4">Thank You!</h2>

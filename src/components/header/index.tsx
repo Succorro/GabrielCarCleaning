@@ -3,7 +3,11 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { useState } from "react"
 import DarkButton from "../ui/DarkButton"
 
-export function Header({setTheme, theme}) {
+interface HeaderProps {
+  setTheme: (theme: boolean) => void;
+  theme: boolean;
+}
+export function Header({setTheme, theme}: HeaderProps) {
   const [openMenu, setOpenMenu] = useState(false)
   return (
     <div className="relative -left-1 flex w-[101vw] h-[14vh] items-center justify-between bg-white text-teal-950 dark:bg-slate-950 dark:text-teal-600 px-4 py-4 md:px-12">

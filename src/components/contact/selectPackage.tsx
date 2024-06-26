@@ -2,7 +2,13 @@ import React, {useState} from 'react'
 import { Button } from '../ui/button'
 import ErrorMessage from './errorMessage';
 
-const SelectPackage = ({ setPage, packge, setPackage }) => {
+interface HeaderProps {
+    setPage: (page: number) => void;
+    packge: string;
+    setPackage: (packge: string) => void;
+  }
+
+const SelectPackage = ({ setPage, packge, setPackage }: HeaderProps) => {
     const options = [
         { id: 'interior', label: 'Interior' },
         { id: 'exterior', label: 'Exterior' },

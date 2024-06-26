@@ -2,8 +2,29 @@ import React from 'react'
 import { Button } from '../ui/button'
 import ErrorMessage from './errorMessage'
 
-const InputInformation = ({setPage, userInfo = {}, setUserInfo, onSubmit, errors, setErrors}) => {
-  const handleChange = (e) => {
+interface UserInfo {
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    email: string;
+    additionalInfo: string;
+  }
+  
+  interface Errors {
+    [key: string]: string | null;
+  }
+
+interface InputInformationProps {
+    setPage: (page: number) => void;
+    userInfo: UserInfo;
+    setUserInfo: React.Dispatch<React.SetStateAction<UserInfo>>;
+    onSubmit: () => void;
+    errors: Errors;
+    setErrors: React.Dispatch<React.SetStateAction<Errors>>;
+  }
+
+const InputInformation = ({setPage, userInfo, setUserInfo, onSubmit, errors, setErrors}: InputInformationProps) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setUserInfo(prevInfo => ({
       ...prevInfo,
@@ -75,7 +96,7 @@ const InputInformation = ({setPage, userInfo = {}, setUserInfo, onSubmit, errors
                     name="additionalInfo"
                     value={userInfo.additionalInfo}
                     onChange={handleChange}
-                    rows="4"
+                    rows={4}
                 ></textarea>
             </div>
       </form>
