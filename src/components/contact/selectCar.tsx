@@ -25,13 +25,13 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
   return (
     <div className='flex flex-col items-center'>
         <h2 className='text-4xl text-blue-800 h-[20vh] pt-10'>Select a Car</h2>
-        <div className="flex space-x-10 h-[40vh]">
+        <div className="flex space-x-10 h-[40vh] items-center">
             {options.map((option) => (
                 <button
                 key={option.id}
                 className={`
                     px-4 py-2 rounded-md text-sm font-medium
-                    transition-all duration-200 ease-in-out
+                    transition-all duration-200 ease-in-out max-h-[30vh]
                     ${
                     vehicle === option.id
                         ? 'bg-blue-100 text-blue-700 border-2 border-blue-700'
