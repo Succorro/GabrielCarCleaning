@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button } from '../ui/button'
-import ErrorMessage from './ErrorMessage'
+import ErrorMessage from './errorMessage'
 
-const InputInformation = ({setPage, userInfo, setUserInfo, onSubmit, errors, setErrors}) => {
+const InputInformation = ({setPage, userInfo = {}, setUserInfo, onSubmit, errors, setErrors}) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserInfo(prevInfo => ({

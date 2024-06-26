@@ -19,8 +19,20 @@ const Contact = () => {
   const [userInfo, setUserInfo] = useState(initialUser);
   const [errors, setErrors] = useState({});
 
-  const validateUserInfo = (user) => {
-    let newErrors = {};
+  const validateUserInfo = (user = {
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    email: '',
+    additionalInfo: ''
+  }) => {
+    let newErrors = {
+      firstName: '',
+      lastName: '',
+      phoneNumber: '',
+      email: '',
+      additionalInfo: ''
+    };
     
     if (!user.firstName.trim()) {
       newErrors.firstName = "First name is required";
