@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button } from '../ui/button'
+import ErrorMessage from './errorMessage';
 
 const SelectPackage = ({ setPage, packge, setPackage }) => {
     const options = [
@@ -7,11 +8,18 @@ const SelectPackage = ({ setPage, packge, setPackage }) => {
         { id: 'exterior', label: 'Exterior' },
         { id: 'full', label: 'Full Package' },
     ];
-
+    const [errorMessage, setErrorMessage] = useState(<></>)
+    const handlePageChange = () => {
+        if(packge === '') {
+            setErrorMessage(<ErrorMessage label='Please Select a Package'/>)
+        } else {
+            setPage(3)
+        }
+    }
     return (
         <div className='flex flex-col items-center'>
-            <h2 className='text-4xl text-blue-800 mb-10'>Select a Package</h2>
-            <div className="flex flex-col items-start mb-32">
+            <h2 className='text-4xl text-blue-800 h-[20vh] pt-10'>Select a Package</h2>
+            <div className="flex flex-col items-start h-[40vh]">
                 {options.map((option) => (
                     <label
                         key={option.id}
@@ -38,9 +46,12 @@ const SelectPackage = ({ setPage, packge, setPackage }) => {
                     </label>
                 ))}
             </div>
-            <div className="flex ">
-                <Button onClick={() => setPage(1)} className='bg-blue-700 hover:bg-blue-800 mr-10'>Previous</Button>
-                <Button onClick={() => setPage(3)} className='bg-blue-700 hover:bg-blue-800'>Next</Button>
+            <div className="h-[20vh] flex flex-col justify-end items-center pb-10">
+                <div>
+                    <Button onClick={() => setPage(1)} className='bg-blue-700 hover:bg-blue-800 mr-10'>Previous</Button>
+                    <Button onClick={handlePageChange} className='bg-blue-700 hover:bg-blue-800'>Next</Button>
+                </div>
+                {errorMessage}
             </div>    
         </div>
     )

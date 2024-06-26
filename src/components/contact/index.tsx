@@ -1,29 +1,61 @@
 import { useState } from 'react'
-import Form from './form'
 import SelectCar from './selectCar'
 import SelectPackage from './selectPackage'
 import InputInformation from './inputInformation'
-const Contact = () => {
+import ErrorMessage from './ErrorMessage'
 
-  const [page, setPage] = useState(1);
-  const [vehicle, setVehicle] = useState('');
-  const [packge, setPackage] = useState('');
-  const [userInfo, setUserInfo] = useState({
+const Contact = () => {
+  const initialUser = {
     firstName: '',
     lastName: '',
     phoneNumber: '',
     email: '',
     additionalInfo: ''
-  });
+  }
+  
+  const [page, setPage] = useState(1);
+  const [vehicle, setVehicle] = useState('');
+  const [packge, setPackage] = useState('');
+  const [userInfo, setUserInfo] = useState(initialUser);
+  const [errors, setErrors] = useState({});
+
+  const validateUserInfo = (user) => {
+    let newErrors = {};
+    
+    if (!user.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+    }
+    
+    if (!user.lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+    }
+    
+    if (!user.phoneNumber.trim()) {
+      newErrors.phoneNumber = "Phone number is required";
+    } else if (!/^\d{10}$/.test(user.phoneNumber.trim())) {
+      newErrors.phoneNumber = "Invalid phone number format";
+    }
+    
+    if (!user.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(user.email)) {
+      newErrors.email = "Invalid email format";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  }
 
   const handleSubmit = () => {
-    const contactInfo = {
-      vehicle: vehicle,
-      package: packge,
-      userInfo: userInfo
+    if (validateUserInfo(userInfo)) {
+      const contactInfo = {
+        vehicle: vehicle,
+        package: packge,
+        userInfo: userInfo
+      }
+      console.log(contactInfo)
+      // Here you would typically send the data to your backend
     }
-
-    console.log(contactInfo)
   }
 
   const displayForm = () => {
@@ -37,8 +69,17 @@ const Contact = () => {
       )
     } else if (page === 3) {
       return (
-        <InputInformation setPage={setPage} userInfo={userInfo} setUserInfo={setUserInfo} onSubmit={handleSubmit}/>
+        <InputInformation 
+          setPage={setPage}
+          userInfo={userInfo}
+          setUserInfo={setUserInfo}
+          onSubmit={handleSubmit}
+          errors={errors}
+          setErrors={setErrors}
+        />
       )
+    } else {
+      return (<p className='text-red-600'>Something went wrong please refresh page.</p>)
     }
   }
 
@@ -62,7 +103,7 @@ const Contact = () => {
         </div> 
       </div>
       <div className='flex flex-col items-center'>
-        <div className='shadow-lg flex items-center justify-center overflow-hidden bg-accent w-[600px] h-[600px]'>
+        <div className='shadow-lg flex items-center justify-center overflow-hidden bg-accent w-[90vw] h-[80vh]'>
           {displayForm()}
         </div>
       </div>

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button } from '../ui/button'
+import ErrorMessage from './errorMessage';
 
 const SelectCar = ({setPage, vehicle, setVehicle}) => {
     const options = [
@@ -7,10 +8,18 @@ const SelectCar = ({setPage, vehicle, setVehicle}) => {
         { id: 'suv', label: 'SUV', img: '/car.png' },
         { id: 'truck', label: 'Truck', img: '/pick-up-truck.png' },
       ];
+    const [errorMessage, setErrorMessage] = useState(<></>)
+    const handlePageChange = () => {
+        if(vehicle === '') {
+            setErrorMessage(<ErrorMessage label='Please Select a Vehicle'/>)
+        } else {
+            setPage(2)
+        }
+    }
   return (
     <div className='flex flex-col items-center'>
-        <h2 className='text-4xl text-blue-800 mb-20'>Select a Car</h2>
-        <div className="flex space-x-10 mb-36">
+        <h2 className='text-4xl text-blue-800 h-[20vh] pt-10'>Select a Car</h2>
+        <div className="flex space-x-10 h-[40vh]">
             {options.map((option) => (
                 <button
                 key={option.id}
@@ -30,7 +39,10 @@ const SelectCar = ({setPage, vehicle, setVehicle}) => {
                 </button>
             ))}
         </div>
-        <Button onClick={()=> setPage(2)} className=' bg-blue-700 hover:bg-blue-800 '>Next </Button>
+        <div className="h-[20vh] flex flex-col justify-end items-center pb-10">
+            <Button onClick={handlePageChange} className=' bg-blue-700 hover:bg-blue-800'>Next </Button>
+            {errorMessage}
+        </div>
     </div>
   )
 }
