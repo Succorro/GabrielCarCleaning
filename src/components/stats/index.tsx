@@ -35,7 +35,7 @@ const Stats = () => {
             <div className='flex flex-col sm:flex-row  items-center sm:justify-center ' onClick={() => set(state => !state)}>
                     {trail.map(({ x, height, ...rest }, index) => (
                     <a.div
-                        key={statInfo[index]}
+                        key={statInfo[index].img}
                         className="w-full pb-10"
                         style={{
                         ...rest,

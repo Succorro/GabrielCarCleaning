@@ -3,7 +3,12 @@ import AnimatedCounter from "../ui/AnimatedConter"
 import {IoCarSport} from 'react-icons/io5'
 import { IoMdThumbsUp } from "react-icons/io";
 
-const Stat = ({img, number, text}) => {
+interface HeaderProps {
+    img: string,
+    number: number,
+    text: string
+}
+const Stat = ({img, number, text}: HeaderProps) => {
     const image = () => {
         if(img === 'hour'){
             return (
