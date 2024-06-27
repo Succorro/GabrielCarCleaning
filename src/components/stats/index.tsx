@@ -1,33 +1,54 @@
-import AnimatedCounter from '../ui/AnimatedConter'
-import { FaHourglassEnd } from 'react-icons/fa'
-import {IoCarSport} from 'react-icons/io5'
-import { IoMdThumbsUp } from "react-icons/io";
+import { useState } from "react";
+import { useTrail, animated as a } from "react-spring";
+import Stat from './stat';
+
+
+const config = { mass: 5, tension: 1000, friction: 200 };
 const Stats = () => {
+    const [toggle, set] = useState(true);
+    const statInfo = [
+        {
+            img: 'hour',
+            number: 8,
+            text: '+ Years of Experience'
+        },
+        {
+            img: 'car',
+            number: 10000,
+            text: '+ Cars Detailed'
+        },
+        {
+            img: 'thumb',
+            number: 100,
+            text: '% Satisfaction Guarantee'
+        }
+    ]
+    const trail = useTrail(statInfo.length, {
+      config,
+      opacity: toggle ? 1 : 0,
+      x: toggle ? 0 : 20,
+      height: toggle ? 80 : 0,
+      from: { opacity: 0, x: 20, height: 0 }
+    });
   return (
-    <div className='bg-white py-5'>
-        <section className='flex flex-col sm:flex-row items-center mx-auto'>
-            <div className={boxStyle}>
-                <FaHourglassEnd size='40px' />
-                <div className="flex mt-3">
-                    <AnimatedCounter end={8} duration={1000}/>+ Years of Experience
-                </div>
+    <div className='bg-white dark:bg-slate-950'>
+            <div className='flex flex-col sm:flex-row  items-center sm:justify-center ' onClick={() => set(state => !state)}>
+                    {trail.map(({ x, height, ...rest }, index) => (
+                    <a.div
+                        key={statInfo[index]}
+                        className="w-full pb-10"
+                        style={{
+                        ...rest,
+                        transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
+                        }}
+                    >
+                        <a.div style={{ height }}>{<Stat img={statInfo[index].img} number={statInfo[index].number} text={statInfo[index].text}/>}</a.div>
+                    </a.div>
+                    ))}
             </div>
-            <div className={boxStyle}>
-                <IoCarSport size='40px'/>
-                <div className="flex mt-3">
-                    Over&nbsp;<AnimatedCounter end={10000} duration={1000}/>&nbsp;Cars Detailed
-                </div>
-            </div>
-            <div className={boxStyle}>
-                <IoMdThumbsUp size='40px'/>
-                <div className="flex mt-3">
-                    <AnimatedCounter end={100} duration={1000}/>% Satifaction Guarantee
-                </div>
-            </div>
-        </section>
     </div>
   )
 }
 
-const boxStyle = 'flex flex-col items-center text-center text-teal-800 font-bold mx-auto my-5 py-5'
 export default Stats
+

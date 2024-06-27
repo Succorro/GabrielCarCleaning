@@ -99,12 +99,12 @@ const Contact = () => {
   }
 
   return (
-    <section id='contact' className="min-h-[100vh] bg-white text-Teal mb-20">
+    <section id='contact' className="min-h-[100vh] bg-white dark:bg-slate-950 dark:text-white text-Teal pb-10">
       <div className='mx-10 pt-10'>
         <div className='-mx-4 flex flex-wrap'>
           <div className='w-full px-4'>
               <div className='mx-auto mb-[30px] max-w-[510px] text-center'>
-                  <span className='mb-2 block text-lg font-semibold text-blue-600'>
+                  <span className='mb-2 block text-lg font-semibold text-blue-800 dark:text-blue-600'>
                       Contact Us
                   </span>
                   <h2 className='mb-3 text-3xl font-bold sm:text-4xl md:leading-[1.2] md:text-[40px]'>
@@ -115,7 +115,7 @@ const Contact = () => {
         </div> 
       </div>
       <div className='flex flex-col items-center'>
-        <div className='shadow-lg flex items-center justify-center overflow-hidden bg-accent w-[90vw] h-[80vh]'>
+        <div className='shadow-lg flex items-center justify-center overflow-hidden bg-accent dark:bg-slate-800 w-[90vw] h-[80vh]'>
           {displayForm()}
         </div>
       </div>
