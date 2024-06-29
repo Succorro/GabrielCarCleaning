@@ -104,18 +104,18 @@ const Contact = () => {
         <div className='-mx-4 flex flex-wrap'>
           <div className='w-full px-4'>
               <div className='mx-auto mb-[30px] max-w-[510px] text-center'>
-                  <span className='mb-2 block text-lg font-semibold text-blue-800 dark:text-blue-600'>
-                      Contact Us
+                  <span className='mb-2 block text-lg font-semibold text-teal-800 dark:text-teal-500'>
+                      
                   </span>
-                  <h2 className='mb-3 text-3xl font-bold sm:text-4xl md:leading-[1.2] md:text-[40px]'>
-                      Detailing Services
+                  <h2 className='mb-3 text-4xl font-semibold text-slate-800 sm:text-4xl md:leading-[1.2] md:text-[40px]'>
+                      Contact Us
                   </h2>
               </div>
           </div>
         </div> 
       </div>
       <div className='flex flex-col items-center'>
-        <div className='shadow-lg flex items-center justify-center overflow-hidden bg-accent dark:bg-slate-800 w-[90vw] h-[80vh]'>
+        <div className='shadow-lg flex items-center justify-center overflow-hidden bg-accent dark:bg-slate-800 min-w-[90vw] min-h-[80vh]'>
           {displayForm()}
         </div>
       </div>

@@ -10,9 +10,11 @@ interface HeaderProps {
 
 const SelectPackage = ({ setPage, packge, setPackage }: HeaderProps) => {
     const options = [
-        { id: 'interior', label: 'Interior' },
-        { id: 'exterior', label: 'Exterior' },
-        { id: 'full', label: 'Full Package' },
+        { id: 'weekend', label: 'Weekend Ready' },
+        { id: 'standard', label: 'The Standard' },
+        { id: 'excellence', label: 'Excellence' },
+        { id: 'cc', label: 'C.C. Special' },
+        { id: 'Partial', label: 'Partial' },
     ];
     const [errorMessage, setErrorMessage] = useState(<></>)
     const handlePageChange = () => {
@@ -25,7 +27,7 @@ const SelectPackage = ({ setPage, packge, setPackage }: HeaderProps) => {
     return (
         <div className='flex flex-col items-center'>
             <h2 className='text-4xl text-blue-800 dark:text-blue-600 h-[20vh] pt-10'>Select a Package</h2>
-            <div className="flex flex-col items-start h-[40vh]">
+            <div className="flex flex-col items-start min-h-[40vh]">
                 {options.map((option) => (
                     <label
                         key={option.id}

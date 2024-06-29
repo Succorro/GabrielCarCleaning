@@ -37,9 +37,9 @@ const InputInformation = ({setPage, userInfo, setUserInfo, onSubmit, errors, set
   };
 
   return (
-    <div className='flex flex-col items-center'>
-      <h2 className='text-4xl text-blue-800 dark:text-blue-600 pt-10 h-[20vh]'>Contact Information</h2>
-      <form className="flex flex-col h-[41vh]">
+    <div className='flex flex-col items-center w-full h-full' >
+      <h2 className='text-4xl text-blue-800 dark:text-blue-600 pt-10 pb-5 h-[25%]'>Contact Information</h2>
+      <form className="flex flex-col h-[55%]">
         <div className="mb-4">
           <input
             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.firstName ? 'border-red-500' : ''}`}
@@ -100,7 +100,7 @@ const InputInformation = ({setPage, userInfo, setUserInfo, onSubmit, errors, set
                 ></textarea>
             </div>
       </form>
-      <div className='h-[20vh] flex flex-col justify-end items-center pb-10'>
+      <div className='h-[20%] flex flex-col justify-end items-center pb-10'>
         <div>
           <Button onClick={()=> setPage(2)} className='hover:bg-blue-800 bg-blue-700 dark:bg-blue-600 dark:text-white mr-10'>Previous </Button>
           <Button onClick={onSubmit} className='bg-green-700 hover:bg-green-900 dark:text-white dark:bg-green-600'>Submit</Button>
