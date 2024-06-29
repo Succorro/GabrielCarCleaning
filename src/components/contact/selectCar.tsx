@@ -24,7 +24,7 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
     }
   return (
     <div className='flex flex-col items-center'>
-        <h2 className='text-4xl text-blue-800 dark:text-blue-600 h-[20vh] pt-10'>Select a Car</h2>
+        <h2 className='text-4xl text-Teal dark:text-teal-600 h-[20vh] pt-10'>Select a Car</h2>
         <div className="flex space-x-10 h-[40vh] items-center">
             {options.map((option) => (
                 <button
@@ -34,7 +34,7 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
                     transition-all duration-200 ease-in-out max-h-[30vh]
                     ${
                     vehicle === option.id
-                        ? 'bg-blue-100 text-blue-700 dark:bg-slate-200 border-2 border-blue-700'
+                        ? 'bg-teal-50 text-teal-700 dark:bg-slate-200 border-2 border-teal-600'
                         : 'bg-gray-100 dark:bg-slate-800 dark:text-white text-gray-700 border-2 border-transparent hover:bg-gray-200'
                     }
                 `}

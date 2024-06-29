@@ -104,10 +104,10 @@ const Contact = () => {
         <div className='-mx-4 flex flex-wrap'>
           <div className='w-full px-4'>
               <div className='mx-auto  max-w-[510px] text-center'>
-                  <h2 className='pb-5 text-4xl font-semibold text-slate-800 dark:text-blue-600 sm:text-4xl md:leading-[1.2] md:text-[40px]'>
+                  <h2 className='pb-5 text-4xl font-semibold text-slate-700 dark:text-teal-600 sm:text-4xl md:leading-[1.2] md:text-[40px]'>
                       Contact Us
                   </h2>
-                  <p className='pb-20 text-lg font-semibold text-blue-700 dark:text-white sm:text-4xl md:leading-[1.2] md:text-[40px]'>
+                  <p className='pb-20 text-md font-semibold text-Teal dark:text-white'>
                       Let us know about you and your car
                   </p>
               </div>

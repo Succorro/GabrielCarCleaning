@@ -34,7 +34,7 @@ const Services = () => {
     },
     {
       id: 5,
-      name: 'PARTIAL',
+      name: 'Partial',
       info: 'Some clients just want a seat ONLY, headliner ONLY, or headlights ONLY. Please fill out an inquiry under the “Partial” section with provided pictures in order to give a precise quote.',
       time: '1 day or less',
       additionalInfo: 'Service time may vary depending on the service provided.'
@@ -45,7 +45,7 @@ const Services = () => {
     <section id='services' className="min-h-[100vh] flex flex-col bg-white dark:bg-slate-950">
         <div className="w-full py-20 md:py-40">
             <div className='flex justify-center'>
-                <h2 className="text-4xl font-semibold text-slate-800 dark:text-teal-600">Services</h2>
+                <h2 className="text-4xl font-semibold text-Teal dark:text-teal-700">Services</h2>
             </div>
         </div>
         <div className="flex bg-gray-100">

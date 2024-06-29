@@ -26,17 +26,17 @@ const SelectPackage = ({ setPage, packge, setPackage }: HeaderProps) => {
     }
     return (
         <div className='flex flex-col items-center'>
-            <h2 className='text-4xl text-blue-800 dark:text-blue-600 h-[20vh] pt-10'>Select a Package</h2>
+            <h2 className='text-4xl text-Teal dark:text-teal-600 h-[20vh] pt-10'>Select a Package</h2>
             <div className="flex flex-col items-start min-h-[40vh]">
                 {options.map((option) => (
                     <label
                         key={option.id}
                         className={`
-                            px-4 py-2 rounded-md text-lg font-medium
+                            px-4 flex items-center py-2 rounded-md text-lg font-medium
                             transition-all duration-200 ease-in-out mt-5 cursor-pointer
                             ${
                                 packge === option.id
-                                    ? 'bg-blue-100 text-blue-700 dark:text-blue-900 dark:bg-slate-200 border-2 border-blue-700'
+                                    ? 'bg-teal-50 text-teal-700 dark:text-teal-700 dark:bg-slate-200 border-2 border-teal-700'
                                     : 'bg-gray-100 text-gray-700 dark:bg-slate-800 dark:text-white border-2 border-transparent hover:bg-gray-200'
                             }
                         `}
@@ -48,8 +48,10 @@ const SelectPackage = ({ setPage, packge, setPackage }: HeaderProps) => {
                             value={option.id} 
                             checked={packge === option.id}
                             onChange={() => setPackage(option.id)}
-                            className='mr-2'
+                            className='mr-2 hidden'
+                            style={{backgroundColor: '#274249'}}
                         />
+                        <span className="custom-radio mr-2"></span>
                         {option.label}
                     </label>
                 ))}

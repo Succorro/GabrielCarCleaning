@@ -9,7 +9,7 @@ export const Hero = () => {
         <div className='flex my-10 mx-auto font-bold text-4xl text-Teal dark:text-teal-700 sm:mx-0 sm:mb-20'>
           <p>Perfection in Every Detail</p>
         </div>
-        <a href='#contact' className='bg-Teal hover:bg-teal-800 dark:bg-gradient-to-r dark:from-teal-600 dark:to-teal-500 w-32 text-white rounded-full py-2 sm:w-32'>
+        <a href='#contact' className='bg-Teal hover:bg-teal-800 dark:bg-teal-700 dark:hover:bg-teal-800 w-32 text-white rounded-full py-2 sm:w-32'>
           Contact Us
         </a>
       </div>

@@ -25,10 +25,11 @@ const Stat = ({img, number, text}: HeaderProps) => {
         }
     }
   return (
-    <div className='flex flex-col items-center text-center text-Teal dark:text-teal-700 font-bold mx-auto my-5 py-5'>
+    <div className='flex flex-col items-center text-center text-Teal dark:text-teal-700 font-semibold text-xl mx-auto my-5 py-5'>
         {image()}
-        <div className="flex mt-3">
-            <AnimatedCounter end={number} duration={1000}/>{text}
+        <div className="flex mt-3 ">
+            <AnimatedCounter end={number} duration={1000}/>
+            <p className="">{text}</p>
         </div>
     </div>
   )

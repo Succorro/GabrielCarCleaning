@@ -27,4 +27,31 @@
     border-radius: 5px;
     will-change: transform, opacity;
   }
-  
+
+  .custom-radio {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #274249;
+    position: relative;
+}
+
+.custom-radio::after {
+    content: '';
+    display: flex;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #0d9488;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #0d9488;
+    transition: transform 0.2s;
+}
+
+input[type="radio"]:checked + .custom-radio::after {
+    transform: translate(-50%, -50%) scale(1);
+}
