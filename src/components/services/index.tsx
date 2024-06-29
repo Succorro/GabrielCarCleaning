@@ -45,7 +45,7 @@ const Services = () => {
     <section id='services' className="min-h-[100vh] flex flex-col bg-white dark:bg-slate-950">
         <div className="w-full py-20 md:py-40">
             <div className='flex justify-center'>
-                <h2 className="text-4xl font-semibold text-slate-800">Services</h2>
+                <h2 className="text-4xl font-semibold text-slate-800 dark:text-teal-600">Services</h2>
             </div>
         </div>
         <div className="flex bg-gray-100">

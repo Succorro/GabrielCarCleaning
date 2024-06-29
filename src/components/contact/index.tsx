@@ -100,16 +100,16 @@ const Contact = () => {
 
   return (
     <section id='contact' className="min-h-[100vh] bg-white dark:bg-slate-950 dark:text-white text-Teal pb-10">
-      <div className='mx-10 pt-10'>
+      <div className='mx-10 pt-0'>
         <div className='-mx-4 flex flex-wrap'>
           <div className='w-full px-4'>
-              <div className='mx-auto mb-[30px] max-w-[510px] text-center'>
-                  <span className='mb-2 block text-lg font-semibold text-teal-800 dark:text-teal-500'>
-                      
-                  </span>
-                  <h2 className='mb-3 text-4xl font-semibold text-slate-800 sm:text-4xl md:leading-[1.2] md:text-[40px]'>
+              <div className='mx-auto  max-w-[510px] text-center'>
+                  <h2 className='pb-5 text-4xl font-semibold text-slate-800 dark:text-blue-600 sm:text-4xl md:leading-[1.2] md:text-[40px]'>
                       Contact Us
                   </h2>
+                  <p className='pb-20 text-lg font-semibold text-blue-700 dark:text-white sm:text-4xl md:leading-[1.2] md:text-[40px]'>
+                      Let us know about you and your car
+                  </p>
               </div>
           </div>
         </div> 
