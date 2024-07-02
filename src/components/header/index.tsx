@@ -10,9 +10,9 @@ interface HeaderProps {
 export function Header({setTheme, theme}: HeaderProps) {
   const [openMenu, setOpenMenu] = useState(false)
   return (
-    <div className="relative -left-1 flex w-[101vw] h-[14vh] items-center justify-between bg-white text-teal-950 dark:bg-slate-950 dark:text-teal-600 px-4 py-4 md:px-12">
+    <div className="relative -left-1 flex w-[101vw] h-[14vh] items-center justify-between bg-white text-teal-950 dark:bg-slate-950 dark:text-DTeal px-4 py-4 md:px-12">
       <a href="/" className="text-xs md:text-base">
-        <img className="w-16" src="/GabrielCarCleaning.png" alt="logo" />
+        <img className="w-16" src="/GCCBg.PNG" alt="logo" />
       </a>
       <div className="sm:hidden">
         <DarkButton setTheme={setTheme} theme={theme}/>
@@ -25,7 +25,7 @@ export function Header({setTheme, theme}: HeaderProps) {
           <DropdownMenu.Portal >
             <div className="static justify-center align-center items-center">
               <DropdownMenu.Content className=" absolute -left-[95vw] bg-white w-[100vw] h-[100vh] mt-8 will-change-auto transition-all ease-in-out duration-700">
-                <div className="flex flex-col justify-center items-center text-teal-900 text-center align-center pt-10">
+                <div className="flex flex-col justify-center items-center text-Teal dark:bg-slate-950 text-center align-center pt-10">
                   <DropdownMenu.Item className=" text-4xl  font-bold py-10">
                     <a href="#">Home</a>
                   </DropdownMenu.Item>
