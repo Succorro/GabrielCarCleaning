@@ -10,11 +10,11 @@ interface HeaderProps {
 
 const SelectPackage = ({ setPage, packge, setPackage }: HeaderProps) => {
     const options = [
-        { id: 'weekend', label: 'Weekend Ready' },
-        { id: 'standard', label: 'The Standard' },
-        { id: 'excellence', label: 'Excellence' },
-        { id: 'cc', label: 'C.C. Special' },
-        { id: 'Partial', label: 'Partial' },
+        { id: 'weekend', label: 'Weekend Ready', price: 100 },
+        { id: 'standard', label: 'The Standard' , price: 100},
+        { id: 'excellence', label: 'Excellence' , price: 100},
+        { id: 'cc', label: 'C.C. Special' , price: 100},
+        { id: 'Partial', label: 'Partial' , price: 100},
     ];
     const [errorMessage, setErrorMessage] = useState(<></>)
     const handlePageChange = () => {
@@ -53,6 +53,7 @@ const SelectPackage = ({ setPage, packge, setPackage }: HeaderProps) => {
                         />
                         <span className="custom-radio mr-2"></span>
                         {option.label}
+                         <p className='text-sm text-teal-800'>{option.price}</p>
                     </label>
                 ))}
             </div>
