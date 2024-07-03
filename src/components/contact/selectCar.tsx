@@ -10,7 +10,7 @@ interface HeaderProps {
 
 const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
     const options = [
-        { id: 'compact', label: 'Compact', img: '/sport-car.png' }
+        { id: 'compact', label: 'Compact', img: '/sport-car.png' },
         { id: 'coupe', label: 'Coupe', img: '/sport-car.png' },
         { id: 'sedan', label: 'Sedan', img: '/sport-car.png' },
         { id: 'smallSuv', label: 'Small SUV', img: '/car.png' },
