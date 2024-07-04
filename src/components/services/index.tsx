@@ -42,13 +42,13 @@ const Services = () => {
   ]
   const [selectedService, setSelectedService] = useState(servicesData[0]);
   return (
-    <section id='services' className="min-h-[100vh] flex flex-col bg-white dark:bg-slate-950">
+    <section id='services' className="min-h-[100vh] flex flex-col bg-white dark:bg-slate-400">
         <div className="w-full py-20 md:py-40">
             <div className='flex justify-center'>
-                <h2 className="text-4xl font-semibold text-Teal dark:text-teal-700">Services</h2>
+                <h2 className="text-4xl font-semibold text-Teal dark:text-DTeal">Services</h2>
             </div>
         </div>
-        <div className="flex bg-gray-100">
+        <div className="flex bg-slate-400">
           <ServiceMenu 
             services={servicesData} 
             selectedService={selectedService}

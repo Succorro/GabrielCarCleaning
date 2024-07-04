@@ -1,7 +1,7 @@
 export const Hero = () => {
 
   return (
-    <div className="flex flex-col sm:flex-row min-h-[90vh] bg-white dark:bg-slate-950">
+    <div className="flex flex-col sm:flex-row min-h-[90vh] bg-white dark:bg-slate-400">
       <div className='flex justify-center items-center h-[50vh]'>
         <img className='object-contain' src="/GCCBg.PNG" alt="" />
       </div>

@@ -31,7 +31,7 @@ const Stats = () => {
       from: { opacity: 0, x: 20, height: 0 }
     });
   return (
-    <div className='bg-white dark:bg-slate-950'>
+    <div className='bg-white dark:bg-slate-400'>
             <div className='flex flex-col sm:flex-row  items-center sm:justify-center ' onClick={() => set(state => !state)}>
                     {trail.map(({ x, height, ...rest }, index) => (
                     <a.div

@@ -11,7 +11,7 @@ const Slider = ({ selectedIndex }: SliderProps) => {
     return (
       <animated.div 
         style={props} 
-        className="absolute left-0 w-1 bg-blue-500 h-12 transition-all duration-200 ease-in-out" 
+        className="absolute left-0 w-1 bg-DTeal h-12 transition-all duration-200 ease-in-out" 
       />
     );
   };

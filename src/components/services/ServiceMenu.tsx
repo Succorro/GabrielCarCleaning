@@ -18,7 +18,7 @@ interface ServiceMenuProps {
 
 const ServiceMenu = ({ services, selectedService, onSelect }: ServiceMenuProps) => {
     return (
-      <div className="w-1/3 bg-white shadow-lg p-6 overflow-y-auto relative">
+      <div className="w-1/3 bg-white dark:bg-slate-300 shadow-lg p-6 overflow-y-auto relative">
         {services.map((service, index) => (
           <ServiceMenuItem 
             key={service.name}
