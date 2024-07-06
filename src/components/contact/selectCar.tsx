@@ -10,11 +10,11 @@ interface HeaderProps {
 
 const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
     const options = [
-        { id: 'compact', label: 'Compact', img: '/sport-car.png' },
+        { id: 'compact', label: 'Compact', img: '/CompactCar.png', style: 'h-[92px] w-[92px] object-cover' },
         { id: 'coupe', label: 'Coupe', img: '/sport-car.png' },
-        { id: 'sedan', label: 'Sedan', img: '/sport-car.png' },
-        { id: 'smallSuv', label: 'Small SUV', img: '/car.png' },
-        { id: 'suv', label: 'SUV', img: '/car.png' },
+        { id: 'sedan', label: 'Sedan', img: '/sedan.png' },
+        { id: 'smallSuv', label: ' SUV', img: '/jeep.png' },
+        { id: 'suv', label: 'Full-Sized SUV', img: '/suv.png' },
         { id: 'truck', label: 'Truck', img: '/pick-up-truck.png' },
       ];
     const [errorMessage, setErrorMessage] = useState(<></>)
@@ -28,13 +28,13 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
   return (
     <div className='flex flex-col items-center'>
         <h2 className='text-4xl text-Teal dark:text-DTeal h-[20vh] pt-10'>Select a Car</h2>
-        <div className="flex space-x-10 h-[40vh] items-center">
+        <div className="flex grid grid-cols-3 gap-5 min-h-[40vh] items-center">
             {options.map((option) => (
                 <button
                 key={option.id}
                 className={`
                     px-4 py-2 rounded-md text-sm font-medium
-                    transition-all duration-200 ease-in-out max-h-[30vh]
+                    transition-all duration-200 ease-in-out w-32
                     ${
                     vehicle === option.id
                         ? 'bg-teal-50 text-teal-700 dark:bg-slate-200 border-2 border-teal-600'
@@ -43,12 +43,12 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
                 `}
                 onClick={() => setVehicle(option.id)}
                 >
-                    <img src={option.img} alt="icon" />
+                    <img className={option.style} src={option.img} alt="icon" />
                     {option.label}
                 </button>
             ))}
         </div>
-        <div className="h-[20vh] flex flex-col justify-end items-center pb-10">
+        <div className="h-[20vh] flex flex-col justify-end items-center pb-3">
             <Button onClick={handlePageChange} className=' bg-blue-700 dark:bg-blue-600 dark:text-white hover:bg-blue-800'>Next </Button>
             {errorMessage}
         </div>
