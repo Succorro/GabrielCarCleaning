@@ -10,6 +10,11 @@ interface User {
   phoneNumber: string;
   email: string;
 }
+interface Package {
+  id: string;
+  label: string;
+  price?: string;
+}
 
 const Contact = () => {
   const initialUser = {
@@ -22,7 +27,7 @@ const Contact = () => {
   
   const [page, setPage] = useState(1);
   const [vehicle, setVehicle] = useState('');
-  const [packge, setPackage] = useState('');
+  const [packge, setPackage] = useState<Package | null>(null);
   const [userInfo, setUserInfo] = useState(initialUser);
   const [errors, setErrors] = useState({});
 
@@ -62,39 +67,43 @@ const Contact = () => {
       }
       console.log(contactInfo)
       setPage(4)
-      // Here you would typically send the data to your backend
+      // Handle Data: Email, storage?
     }
   }
 
   const displayForm = () => {
-    if(page === 1){
-      return(
-        <SelectCar setPage={setPage} vehicle={vehicle} setVehicle={setVehicle}/>
-      )
-    } else if (page === 2 ){
-      return(
-        <SelectPackage setPage={setPage} packge={packge} setPackage={setPackage}/>
-      )
-    } else if (page === 3) {
-      return (
-        <InputInformation 
-          setPage={setPage}
-          userInfo={userInfo}
-          setUserInfo={setUserInfo}
-          onSubmit={handleSubmit}
-          errors={errors}
-          setErrors={setErrors}
-        />
-      )
-    } else {
-      return (
-        <ThankYouMessage onClose={()=>{
-          setVehicle('');
-          setPackage('');
-          setUserInfo(initialUser);
-          setPage(1);
-        }}/>
-      )
+    switch(page) {
+      case 1:
+        return <SelectCar setPage={setPage} vehicle={vehicle} setVehicle={setVehicle} />;
+      case 2:
+        return (
+          <SelectPackage 
+            vehicle={vehicle} 
+            setPage={setPage} 
+            packge={packge ? packge.id : null} 
+            setPackage={setPackage}
+          />
+        );
+      case 3:
+        return (
+          <InputInformation 
+            setPage={setPage}
+            userInfo={userInfo}
+            setUserInfo={setUserInfo}
+            onSubmit={handleSubmit}
+            errors={errors}
+            setErrors={setErrors}
+          />
+        );
+      default:
+        return (
+          <ThankYouMessage onClose={() => {
+            setVehicle('');
+            setPackage(null);
+            setUserInfo(initialUser);
+            setPage(1);
+          }}/>
+        );
     }
   }
 

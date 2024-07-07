@@ -10,7 +10,7 @@ interface HeaderProps {
 
 const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
     const options = [
-        { id: 'compact', label: 'Compact', img: '/CompactCar.png', style: 'h-[92px] w-[92px] object-cover' },
+        { id: 'compact', label: 'Compact', img: '/CompactCar.png', style: 'w-[70px] h-[80px] sm:h-[92px]  sm:w-[92px] object-cover' },
         { id: 'coupe', label: 'Coupe', img: '/sport-car.png' },
         { id: 'sedan', label: 'Sedan', img: '/sedan.png' },
         { id: 'smallSuv', label: ' SUV', img: '/jeep.png' },
@@ -34,7 +34,7 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
                 key={option.id}
                 className={`
                     px-4 py-2 rounded-md text-sm font-medium
-                    transition-all duration-200 ease-in-out w-32
+                    transition-all duration-200 ease-in-out w-28
                     ${
                     vehicle === option.id
                         ? 'bg-teal-50 text-teal-700 dark:bg-slate-200 border-2 border-teal-600'

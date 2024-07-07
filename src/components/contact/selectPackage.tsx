@@ -2,21 +2,30 @@ import React, {useState} from 'react'
 import { Button } from '../ui/button'
 import ErrorMessage from './errorMessage';
 
-interface HeaderProps {
+    interface Package {
+        id: string;
+        label: string;
+        price?: string;
+    }
+
+  interface HeaderProps {
     setPage: (page: number) => void;
-    packge: string;
-    setPackage: (packge: string) => void;
+    packge: string | null;
+    setPackage: (packge: Package) => void;
+    vehicle: string;
   }
 
-const SelectPackage = ({ setPage, packge, setPackage }: HeaderProps) => {
+const SelectPackage = ({ setPage, packge, setPackage, vehicle }: HeaderProps) => {
     const options = [
-        { id: 'weekend', label: 'Weekend Ready', price: 100 },
-        { id: 'standard', label: 'The Standard' , price: 100},
-        { id: 'excellence', label: 'Excellence' , price: 100},
-        { id: 'cc', label: 'C.C. Special' , price: 100},
-        { id: 'Partial', label: 'Partial' , price: 100},
+        { id: 'weekend', label: 'Weekend Ready' },
+        { id: 'standard', label: 'The Standard' },
+        { id: 'excellence', label: 'Excellence' },
+        { id: 'cc', label: 'C.C. Special' },
+        { id: 'partial', label: 'Partial' },
     ];
     const [errorMessage, setErrorMessage] = useState(<></>)
+    const [pricing, setPricing] = useState('')
+
     const handlePageChange = () => {
         if(packge === '') {
             setErrorMessage(<ErrorMessage label='Please Select a Package'/>)
@@ -24,6 +33,66 @@ const SelectPackage = ({ setPage, packge, setPackage }: HeaderProps) => {
             setPage(3)
         }
     }
+    console.log(vehicle)
+    const getPricing = (optionId: string, vehicleType: string) => {
+        if (vehicleType === 'compact') {
+          switch (optionId) {
+            case 'weekend': return '$65';
+            case 'standard': return '$170 - 190';
+            case 'excellence': return '$650+';
+            case 'cc': return '$150 - 200';
+            default: return 'Prices Vary';
+          }
+        } else if (vehicleType === 'coupe') {
+          switch (optionId) {
+            case 'weekend': return '$75';
+            case 'standard': return '$170 - 190';
+            case 'excellence': return '$700+';
+            case 'cc': return '$250 - 300';
+            default: return 'Prices Vary';
+          }
+        } else if (vehicleType === 'sedan') {
+            switch (optionId) {
+              case 'weekend': return '$85';
+              case 'standard': return '$200-220';
+              case 'excellence': return '$800+';
+              case 'cc': return '$250 - 300';
+              default: return 'Prices Vary';
+            }
+        } else if (vehicleType === 'smallSuv') {
+            switch (optionId) {
+              case 'weekend': return '$90';
+              case 'standard': return '$250 - 350';
+              case 'excellence': return '$1000+';
+              case 'cc': return '$250 - 300';
+              default: return 'Prices Vary';
+            }
+        } else if (vehicleType === 'suv') {
+            switch (optionId) {
+              case 'weekend': return '$100';
+              case 'standard': return '$270 - 350';
+              case 'excellence': return '$1150+';
+              case 'cc': return '$250 - 300';
+              default: return 'Prices Vary';
+            }
+        } else if (vehicleType === 'truck') {
+            switch (optionId) {
+              case 'weekend': return '$100';
+              case 'standard': return '$250-400';
+              case 'excellence': return '$1200+';
+              case 'cc': return '$250 - 300';
+              default: return 'Prices Vary';
+            }
+        }
+        return 'Price not available';
+      };
+
+      const handlePackageSelection = (option: typeof options[0]) => {
+        const price = getPricing(option.id, vehicle);
+        setPackage({ ...option, price });
+      };
+
+
     return (
         <div className='flex flex-col items-center'>
             <h2 className='text-4xl text-Teal dark:text-DTeal h-[20vh] pt-10'>Select a Package</h2>
@@ -47,13 +116,15 @@ const SelectPackage = ({ setPage, packge, setPackage }: HeaderProps) => {
                             name="package"
                             value={option.id} 
                             checked={packge === option.id}
-                            onChange={() => setPackage(option.id)}
+                            onChange={() => handlePackageSelection(option)}
                             className='mr-2 hidden'
                             style={{backgroundColor: '#274249'}}
                         />
                         <span className="custom-radio mr-2"></span>
-                        {option.label}
-                         <p className='text-sm text-teal-800'>{option.price}</p>
+                        <div className='flex flex-col items-between justify-end'>
+                            <p>{option.label}</p>
+                            <p className='text-sm text-teal-800'>{getPricing(option.id, vehicle)}</p>    
+                        </div>
                     </label>
                 ))}
             </div>
