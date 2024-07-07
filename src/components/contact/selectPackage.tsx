@@ -24,10 +24,9 @@ const SelectPackage = ({ setPage, packge, setPackage, vehicle }: HeaderProps) =>
         { id: 'partial', label: 'Partial' },
     ];
     const [errorMessage, setErrorMessage] = useState(<></>)
-    const [pricing, setPricing] = useState('')
 
     const handlePageChange = () => {
-        if(packge === '') {
+        if(packge === null) {
             setErrorMessage(<ErrorMessage label='Please Select a Package'/>)
         } else {
             setPage(3)
