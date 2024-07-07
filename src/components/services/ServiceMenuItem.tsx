@@ -11,15 +11,15 @@ interface ServiceMenuItemProps {
 
 const ServiceMenuItem = ({ service, isSelected, onClick, index }: ServiceMenuItemProps) => {
     const props = useSpring({
-      opacity: isSelected ? 1 : 0.6,
+      opacity: isSelected ? 1 : 0.8,
       transform: isSelected ? 'scale(1.05)' : 'scale(1)',
     });
     return (
       <animated.div 
         style={props} 
         onClick={onClick} 
-        className={`py-5 px-4 cursor-pointer transition-colors duration-200 ease-in-out
-                    ${isSelected ? 'bg-slate-200 text-DTeal' : 'hover:bg-gray-100 text-slate-950'}`}
+        className={`min-w-[110px] py-4 px-3 cursor-pointer transition-colors duration-200 ease-in-out border sm:border-none border-slate-600 rounded-xl sm:rounded-none mx-2 text-center
+                    ${isSelected ? 'bg-teal-950 text-white border-black' : 'hover:bg-teal-900 hover:text-white font-bold'}`}
       >
         {service.name}
       </animated.div>

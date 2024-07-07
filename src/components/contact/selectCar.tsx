@@ -26,8 +26,8 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
         }
     }
   return (
-    <div className='flex flex-col items-center'>
-        <h2 className='text-4xl text-Teal dark:text-DTeal h-[20vh] pt-10'>Select a Car</h2>
+    <div className='flex flex-col items-center text-start'>
+        <h2 className='text-4xl text-teal-950 dark:text-DTeal h-[20vh] pt-10'>Select a Car</h2>
         <div className="flex grid grid-cols-3 gap-5 min-h-[40vh] items-center">
             {options.map((option) => (
                 <button
@@ -44,7 +44,7 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
                 onClick={() => setVehicle(option.id)}
                 >
                     <img className={option.style} src={option.img} alt="icon" />
-                    {option.label}
+                    <p className='font-bold text-teal-950'>{option.label}</p>
                 </button>
             ))}
         </div>

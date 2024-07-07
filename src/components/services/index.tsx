@@ -27,7 +27,7 @@ const Services = () => {
     },
     {
       id: 4,
-      name: 'C.C.Special',
+      name: 'C.C. Special',
       info: ' Is a full interior cleaning in which all cracks & surfaces of the interior will be properly aired & cleaned out. Any carpet & cloth material will be properly steam cleaned & heat extracted if the job requires so.',
       time: '8 hours, allowing for proper drying time',
       additionalInfo: 'Leather conditioner will be applied for leather seating & interior windows will be cleaned, time may vary depending on vehicle condition'
@@ -35,20 +35,20 @@ const Services = () => {
     {
       id: 5,
       name: 'Partial',
-      info: 'Some clients just want a seat ONLY, headliner ONLY, or headlights ONLY. Please fill out an inquiry under the “Partial” section with provided pictures in order to give a precise quote.',
+      info: 'Some clients just want a seat ONLY, headliner ONLY, or headlights ONLY. Please fill out an inquiry under the “Additional Information” section with provided pictures in order to give a precise quote.',
       time: '1 day or less',
       additionalInfo: 'Service time may vary depending on the service provided.'
     },
   ]
   const [selectedService, setSelectedService] = useState(servicesData[0]);
   return (
-    <section id='services' className="min-h-[100vh] flex flex-col bg-white dark:bg-slate-400">
+    <section id='services' className="min-h-[100vh] flex flex-col bg-white dark:bg-slate-400 py-10">
         <div className="w-full py-20 md:py-40">
             <div className='flex justify-center'>
                 <h2 className="text-4xl font-semibold text-Teal dark:text-DTeal">Services</h2>
             </div>
         </div>
-        <div className="flex bg-slate-400">
+        <div className="flex flex-col sm:flex-row">
           <ServiceMenu 
             services={servicesData} 
             selectedService={selectedService}

@@ -1,6 +1,4 @@
-import { useRef } from 'react';
 import ServiceMenuItem from './ServiceMenuItem';
-import Slider from './Slider';
 
 export interface Service {
     id: number;  
@@ -18,7 +16,7 @@ interface ServiceMenuProps {
 
 const ServiceMenu = ({ services, selectedService, onSelect }: ServiceMenuProps) => {
     return (
-      <div className="w-1/3 bg-white dark:bg-slate-300 shadow-lg p-6 overflow-y-auto relative">
+      <div className="flex flex-row sm:flex-col w-full sm:w-1/3 bg-white dark:bg-slate-300 sm:shadow-lg p-6 sm:overflow-y-auto overflow-x-auto relative">
         {services.map((service, index) => (
           <ServiceMenuItem 
             key={service.name}
@@ -28,7 +26,6 @@ const ServiceMenu = ({ services, selectedService, onSelect }: ServiceMenuProps) 
             index={index}
           />
         ))}
-        <Slider  selectedIndex={selectedService.id - 1} />
       </div>
     );
   };

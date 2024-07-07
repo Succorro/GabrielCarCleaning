@@ -38,7 +38,10 @@ const InputInformation = ({setPage, userInfo, setUserInfo, onSubmit, errors, set
 
   return (
     <div className='flex flex-col items-center w-full h-full' >
-      <h2 className='text-4xl text-Teal dark:text-DTeal pt-5 pb-10 h-[25%]'>Contact Information</h2>
+      <div className=' flex flex-col text-center pt-5 pb-10 h-[25%]'>
+        <h2 className='text-4xl text-Teal dark:text-DTeal '>Contact Information</h2>
+        <p className='text-sm mt-1 font-medium text-Teal'>Please fill out entire form</p>
+      </div>
       <form className="flex flex-col h-[55%]">
         <div className="mb-4">
           <input

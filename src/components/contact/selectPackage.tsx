@@ -33,7 +33,6 @@ const SelectPackage = ({ setPage, packge, setPackage, vehicle }: HeaderProps) =>
             setPage(3)
         }
     }
-    console.log(vehicle)
     const getPricing = (optionId: string, vehicleType: string) => {
         if (vehicleType === 'compact') {
           switch (optionId) {
@@ -95,7 +94,7 @@ const SelectPackage = ({ setPage, packge, setPackage, vehicle }: HeaderProps) =>
 
     return (
         <div className='flex flex-col items-center'>
-            <h2 className='text-4xl text-Teal dark:text-DTeal h-[20vh] pt-10'>Select a Package</h2>
+            <h2 className='text-4xl text-Teal dark:text-DTeal min-h-[15vh] pt-10'>Select a Package</h2>
             <div className="flex flex-col items-start min-h-[40vh]">
                 {options.map((option) => (
                     <label
@@ -122,7 +121,7 @@ const SelectPackage = ({ setPage, packge, setPackage, vehicle }: HeaderProps) =>
                         />
                         <span className="custom-radio mr-2"></span>
                         <div className='flex flex-col items-between justify-end'>
-                            <p>{option.label}</p>
+                            <p className='font-semibold text-teal-950'>{option.label}</p>
                             <p className='text-sm text-teal-800'>{getPricing(option.id, vehicle)}</p>    
                         </div>
                     </label>
