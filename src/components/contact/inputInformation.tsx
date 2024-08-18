@@ -105,7 +105,7 @@ const InputInformation = ({setPage, userInfo, setUserInfo, onSubmit, errors, set
       </form>
       <div className='h-[20%] flex flex-col justify-end items-center pb-10'>
         <div>
-          <Button onClick={()=> setPage(2)} className='hover:bg-blue-800 bg-blue-700 dark:bg-blue-600 dark:text-white mr-10'>Previous </Button>
+          <Button onClick={()=> setPage(2)} className='bg-red-700 hover:bg-red-800 dark:bg-blue-600 dark:text-white mr-10'>Previous </Button>
           <Button onClick={onSubmit} className='bg-green-700 hover:bg-green-900 dark:text-white dark:bg-green-600'>Submit</Button>
         </div>
       </div>

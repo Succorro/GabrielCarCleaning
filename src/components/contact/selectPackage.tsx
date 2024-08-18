@@ -103,8 +103,8 @@ const SelectPackage = ({ setPage, packge, setPackage, vehicle }: HeaderProps) =>
                             transition-all duration-200 ease-in-out mt-5 cursor-pointer
                             ${
                                 packge === option.id
-                                    ? 'bg-teal-950 text-white dark:text-teal-700 dark:bg-slate-200 border-2 border-teal-950'
-                                    : 'bg-gray-100 text-gray-700 dark:bg-slate-300 dark:text-DTeal border-2 border-transparent hover:bg-teal-800 hover:text-white dark:hover:bg-slate-200 dark:hover:text-teal-700'
+                                    ? 'bg-teal-700 text-white dark:text-teal-700 dark:bg-slate-200 border-2 border-teal-700'
+                                    : 'bg-gray-100 text-gray-700 dark:bg-slate-300 dark:text-DTeal border-2 border-transparent hover:bg-teal-600 hover:text-white dark:hover:bg-slate-200 dark:hover:text-teal-700'
                             }
                         `}
                     >
@@ -119,13 +119,13 @@ const SelectPackage = ({ setPage, packge, setPackage, vehicle }: HeaderProps) =>
                             
                         />
                         <span className="custom-radio mr-2"></span>
-                        <div className='flex flex-col items-between justify-end'>
+                        <div className='flex flex-col items-between justify-end '>
                             <p className='font-semibold '>{option.label}</p>
                             <p className={`text-sm 
                               ${
                                 packge === option.id 
-                                ? 'text-teal-100' 
-                                : 'text-teal-700 '
+                                ? 'text-white' 
+                                : 'text-teal-600 '
                               }
                             `}>{getPricing(option.id, vehicle)}</p>    
                         </div>
@@ -134,8 +134,8 @@ const SelectPackage = ({ setPage, packge, setPackage, vehicle }: HeaderProps) =>
             </div>
             <div className="h-[20vh] flex flex-col justify-end items-center pb-10">
                 <div>
-                    <Button onClick={() => setPage(1)} className='bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:text-white mr-10'>Previous</Button>
-                    <Button onClick={handlePageChange} className='bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:text-white'>Next</Button>
+                    <Button onClick={() => setPage(1)} className='bg-red-700 hover:bg-red-800 dark:bg-blue-600 dark:text-white mr-10'>Previous</Button>
+                    <Button onClick={handlePageChange} className='bg-teal-600 hover:bg-teal-700 dark:bg-blue-600 dark:text-white'>Next</Button>
                 </div>
                 {errorMessage}
             </div>    
