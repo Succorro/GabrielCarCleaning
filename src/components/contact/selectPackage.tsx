@@ -103,8 +103,8 @@ const SelectPackage = ({ setPage, packge, setPackage, vehicle }: HeaderProps) =>
                             transition-all duration-200 ease-in-out mt-5 cursor-pointer
                             ${
                                 packge === option.id
-                                    ? 'bg-teal-50 text-teal-700 dark:text-teal-700 dark:bg-slate-200 border-2 border-teal-700'
-                                    : 'bg-gray-100 text-gray-700 dark:bg-slate-300 dark:text-DTeal border-2 border-transparent hover:bg-gray-200 dark:hover:bg-slate-200 dark:hover:text-teal-700'
+                                    ? 'bg-teal-950 text-white dark:text-teal-700 dark:bg-slate-200 border-2 border-teal-950'
+                                    : 'bg-gray-100 text-gray-700 dark:bg-slate-300 dark:text-DTeal border-2 border-transparent hover:bg-teal-800 hover:text-white dark:hover:bg-slate-200 dark:hover:text-teal-700'
                             }
                         `}
                     >
@@ -115,13 +115,19 @@ const SelectPackage = ({ setPage, packge, setPackage, vehicle }: HeaderProps) =>
                             value={option.id} 
                             checked={packge === option.id}
                             onChange={() => handlePackageSelection(option)}
-                            className='mr-2 hidden'
-                            style={{backgroundColor: '#274249'}}
+                            className='mr-2 hidden bg-teal-00'
+                            
                         />
                         <span className="custom-radio mr-2"></span>
                         <div className='flex flex-col items-between justify-end'>
-                            <p className='font-semibold text-teal-950'>{option.label}</p>
-                            <p className='text-sm text-teal-800'>{getPricing(option.id, vehicle)}</p>    
+                            <p className='font-semibold '>{option.label}</p>
+                            <p className={`text-sm 
+                              ${
+                                packge === option.id 
+                                ? 'text-teal-100' 
+                                : 'text-teal-700 '
+                              }
+                            `}>{getPricing(option.id, vehicle)}</p>    
                         </div>
                     </label>
                 ))}

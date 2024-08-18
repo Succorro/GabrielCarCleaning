@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ServiceMenu from './ServiceMenu';
 import ServiceDetails from './ServiceDetails';
+import ServiceItem from './ServiceItem';
 
 const Services = () => {
   const servicesData = [
@@ -48,13 +49,12 @@ const Services = () => {
                 <h2 className="text-4xl font-semibold text-Teal dark:text-DTeal">Services</h2>
             </div>
         </div>
-        <div className="flex flex-col sm:flex-row">
-          <ServiceMenu 
-            services={servicesData} 
-            selectedService={selectedService}
-            onSelect={setSelectedService}
-          />
-          <ServiceDetails service={selectedService} />
+        <div className="flex flex-col xl:grid xl:grid-cols-2 mx-3 md:mx-10">
+          {servicesData.map((service) => {
+            return (
+              <ServiceItem key={service.id} service={service}/>
+            )
+          })}
         </div>
     </section>
   )
