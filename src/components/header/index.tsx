@@ -15,11 +15,11 @@ export function Header({setTheme, theme}: HeaderProps) {
         <img className="w-16" src="/GCCBg.PNG" alt="logo" />
       </a>
       <div className="sm:hidden">
-        <DarkButton setTheme={setTheme} theme={theme}/>
+        {/* <DarkButton setTheme={setTheme} theme={theme}/> */}
         <DropdownMenu.Root onOpenChange={()=> setOpenMenu(!openMenu)}>
           <DropdownMenu.Trigger asChild>
-            <button className="  transition-all duration-700 ease-in-out" aria-label="Customise options">
-              {openMenu ? <LuX/>: <LuMenu className='focus:border-none dark:text-white'/>}
+            <button className=" transition-all duration-700 ease-in-out" aria-label="Customise options">
+              {openMenu ? <LuX size={28}/>: <LuMenu className='focus:border-none dark:text-white' size={28}/>}
             </button>
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal >
