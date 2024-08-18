@@ -1,7 +1,11 @@
+import Carousel from "react-multi-carousel"
+import 'react-multi-carousel/lib/styles.css'
+import { isMobile, isTablet } from "react-device-detect"
+import CustomDot from "../ui/CustomDot"
 
 interface HeaderProps {
     service: {
-        imageUrl: string,
+        images: string[],
         name: string,
         info: string,
         time: string,
@@ -9,18 +13,68 @@ interface HeaderProps {
     };
 }
 
+const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3 // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2 // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1 // optional, default to 1.
+    }
+  };
+
 const ServiceItem = ({service}: HeaderProps) => {
     console.log(service)
+    let deviceType = 'desktop';
+    if(isMobile) {
+        deviceType = 'mobile';
+    } else if (isTablet) {
+        deviceType = 'tablet';
+    }
+
   return (
     <div className="w-full px-4">
       <div className="mb-8 overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800">
         <div className="h-96 w-full bg-gray-200 dark:bg-gray-700">
         {/* Image placeholder */}
-          <img
-            src={service.imageUrl || '/placeholder-image.jpg'}
-            alt={service.name}
-            className="h-full w-full object-cover"
-          />
+        <Carousel
+            swipeable={true}
+            draggable={true}
+            showDots={true}
+            customDot={<CustomDot />}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            autoPlay={!isMobile}
+            autoPlaySpeed={1000}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            deviceType={deviceType}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+        >
+          {service.images.map((image, index) => (
+            <div key={index} className="relative h-64 md:h-96">
+                <img
+                src={image}
+                alt={`${service.name} - Image ${index + 1}`}
+                className="h-full w-full object-cover"
+                />
+            </div>
+          ))}
+        </Carousel>
+          
         </div>
         <div className="p-6">
           <span className="mb-2 inline-block rounded-full bg-Teal px-3 py-1 text-md font-medium text-white dark:bg-teal-800 dark:text-teal-100">
