@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import ServiceMenu from './ServiceMenu';
-import ServiceDetails from './ServiceDetails';
 import ServiceItem from './ServiceItem';
 
 const Services = () => {

@@ -37,8 +37,8 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
                     transition-all duration-200 ease-in-out w-28
                     ${
                     vehicle === option.id
-                        ? 'bg-teal-950 text-white dark:bg-slate-200 border-2 border-teal-950'
-                        : 'bg-gray-100 dark:bg-slate-300 dark:text-DTeal text-gray-700 border-2 border-transparent hover:bg-teal-800 hover:text-white dark:hover:bg-slate-200 dark:hover:text-teal-700'
+                        ? 'bg-teal-700 text-slate-100 dark:bg-slate-200 border-2 border-teal-700 transition-colors duration-300'
+                        : 'bg-gray-100 dark:bg-slate-300 dark:text-DTeal text-gray-800 border-2 border-transparent hover:bg-teal-600 hover:text-slate-100 dark:hover:bg-slate-200 dark:hover:text-teal-700 transition-colors duration-300'
                     }
                 `}
                 onClick={() => setVehicle(option.id)}
@@ -49,7 +49,7 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
             ))}
         </div>
         <div className="h-[20vh] flex flex-col justify-end items-center pb-3">
-            <Button onClick={handlePageChange} className=' bg-teal-950 dark:bg-blue-600 dark:text-white hover:bg-teal-800'>Next </Button>
+            <Button onClick={handlePageChange} className=' bg-teal-600 dark:bg-blue-600 dark:text-white hover:bg-teal-800 transition-colors duration-300'>Next </Button>
             {errorMessage}
         </div>
     </div>
