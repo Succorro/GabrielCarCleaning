@@ -43,8 +43,6 @@ const ServiceItem = ({service}: HeaderProps) => {
   return (
     <div className="w-full px-4">
       <div className="mb-8 overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800">
-        <div className="h-96 w-full bg-gray-200 dark:bg-gray-700">
-        {/* Image placeholder */}
         <Carousel
             swipeable={true}
             draggable={true}
@@ -62,10 +60,10 @@ const ServiceItem = ({service}: HeaderProps) => {
             removeArrowOnDeviceType={["tablet", "mobile"]}
             deviceType={deviceType}
             dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
+            className="h-96 w-full bg-gray-200 dark:bg-gray-700"
         >
           {service.images.map((image, index) => (
-            <div key={index} className="relative h-64 md:h-96">
+            <div key={index} className="relative h-96">
                 <img
                 src={image}
                 alt={`${service.name} - Image ${index + 1}`}
@@ -74,8 +72,6 @@ const ServiceItem = ({service}: HeaderProps) => {
             </div>
           ))}
         </Carousel>
-          
-        </div>
         <div className="p-6">
           <span className="mb-2 inline-block rounded-full bg-Teal px-3 py-1 text-md font-medium text-white dark:bg-teal-800 dark:text-teal-100">
             {service.name}

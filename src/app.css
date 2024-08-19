@@ -63,3 +63,6 @@ input[type="radio"]:checked + .custom-radio::after {
   justify-content: center;
   width: 100%;
 }
+.carousel-container {
+  padding: 0;
+}
