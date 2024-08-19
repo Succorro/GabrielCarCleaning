@@ -44,15 +44,17 @@ const Services = () => {
     },
   ]
   return (
-    <section id='services' className="min-h-[100vh] flex flex-col bg-white dark:bg-slate-400 py-10">
-      <div className="w-full py-20 md:py-40">
-        <div className='mx-auto  max-w-[510px] text-start'>
-          <h2 className='pb-3 text-4xl font-semibold text-teal-700 dark:text-DTeal sm:text-4xl md:leading-[1.2] md:text-[40px]'>
-            Services
-          </h2>
-          <div className='w-full border border-1 border-teal-600 mb-10'></div>
+    <section id='services' className="min-h-[100vh] bg-white dark:bg-slate-400 dark:text-white text-Teal pb-10 pt-10">
+      <div className='mx-4 flex flex-wrap'>
+        <div className='w-full px-4'>
+            <div className='mx-auto  max-w-[510px] text-start'>
+                <h2 className='pb-3 text-4xl font-semibold text-teal-700 dark:text-DTeal sm:text-4xl md:leading-[1.2] md:text-[40px]'>
+                    Services
+                </h2>
+                <div className='w-full border border-1 border-teal-600 mb-10'></div>
+            </div>
         </div>
-      </div>
+      </div> 
       <div className="flex flex-col xl:grid xl:grid-cols-2 mx-3 md:mx-10">
         {servicesData.map((service) => {
           return (

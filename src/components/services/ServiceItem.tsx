@@ -43,25 +43,25 @@ const ServiceItem = ({service}: HeaderProps) => {
   return (
     <div className="w-full px-4">
       <div className="mb-8 overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800">
-        <Carousel
-            swipeable={true}
-            draggable={true}
-            showDots={true}
-            customDot={<CustomDot />}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            autoPlay={!isMobile}
-            autoPlaySpeed={1000}
-            keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-            deviceType={deviceType}
-            dotListClass="custom-dot-list-style"
-            className="h-96 w-full bg-gray-200 dark:bg-gray-700"
-        >
+      <Carousel
+      swipeable={true}
+      draggable={true}
+      showDots={true}
+      customDot={<CustomDot />}
+      responsive={responsive}
+      ssr={true}
+      infinite={true}
+      autoPlay={false}
+      keyBoardControl={true}
+      customTransition="transform 350ms ease-out"
+      transitionDuration={300}
+      containerClass="carousel-container"
+      removeArrowOnDeviceType={["tablet", "mobile"]}
+      deviceType={deviceType}
+      dotListClass="custom-dot-list-style"
+      itemClass="carousel-item"
+      className="h-96 w-full bg-gray-200 dark:bg-gray-700"
+    >
           {service.images.map((image, index) => (
             <div key={index} className="relative h-96">
                 <img

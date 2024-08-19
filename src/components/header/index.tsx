@@ -10,7 +10,7 @@ interface HeaderProps {
 export function Header({setTheme, theme}: HeaderProps) {
   const [openMenu, setOpenMenu] = useState(false)
   return (
-    <div className="relative -left-1 flex w-[101vw] h-[14vh] items-center justify-between bg-white text-teal-950 dark:bg-slate-400 dark:text-DTeal px-4 py-4 md:px-12">
+    <div className="fixed z-50 -left-1 flex w-[101vw] h-[10vh] items-center justify-between bg-white text-teal-950 dark:bg-slate-400 dark:text-DTeal px-4 py-4 md:px-12">
       <a href="/" className="text-xs md:text-base">
         <img className="w-16" src="/GCCBg.PNG" alt="logo" />
       </a>
