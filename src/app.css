@@ -33,22 +33,22 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid #274249;
+    border: 0px solid #274249;
     position: relative;
 }
 
 .custom-radio::after {
     content: '';
     display: flex;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    border: 2px solid #0d9488;
+    border: 2px solid white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    background-color: #0d9488;
+    background-color: white;
     transition: transform 0.2s;
 }
 

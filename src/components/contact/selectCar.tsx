@@ -26,9 +26,12 @@ const SelectCar = ({setPage, vehicle, setVehicle}: HeaderProps) => {
         }
     }
   return (
-    <div className='flex flex-col items-center text-start'>
-        <h2 className='text-4xl text-teal-950 dark:text-DTeal h-[20vh] pt-10'>Select a Car</h2>
-        <div className="flex grid grid-cols-3 gap-5 min-h-[40vh] items-center">
+    <div className='flex flex-col items-center text-start min-h-['>
+        <div className=' flex flex-col text-center pt-5 pb-10 h-[25%]'>
+          <h2 className='text-4xl text-Teal dark:text-DTeal '>Select a Car</h2>
+          <p className='text-sm mt-5 font-medium text-Teal'>What car do you drive? </p>
+        </div>
+        <div className="flex grid grid-cols-3 gap-5 min-h-[40vh] w-[80vw] items-center">
             {options.map((option) => (
                 <button
                 key={option.id}

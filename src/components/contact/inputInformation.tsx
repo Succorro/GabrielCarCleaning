@@ -38,9 +38,9 @@ const InputInformation = ({setPage, userInfo, setUserInfo, onSubmit, errors, set
 
   return (
     <div className='flex flex-col items-center w-full h-full' >
-      <div className=' flex flex-col text-center pt-5 pb-10 h-[25%]'>
+      <div className=' flex flex-col text-center -mt-32 pb-10 h-[25%] sm:mt-0'>
         <h2 className='text-4xl text-Teal dark:text-DTeal '>Contact Information</h2>
-        <p className='text-sm mt-1 font-medium text-Teal'>Please fill out entire form</p>
+        <p className='text-sm mt-3 font-medium text-Teal'>Please fill out entire form</p>
       </div>
       <form className="flex flex-col h-[55%]">
         <div className="mb-4">
@@ -106,7 +106,7 @@ const InputInformation = ({setPage, userInfo, setUserInfo, onSubmit, errors, set
       <div className='h-[20%] flex flex-col justify-end items-center pb-10'>
         <div>
           <Button onClick={()=> setPage(2)} className='bg-red-700 hover:bg-red-800 dark:bg-blue-600 dark:text-white mr-10'>Previous </Button>
-          <Button onClick={onSubmit} className='bg-green-700 hover:bg-green-900 dark:text-white dark:bg-green-600'>Submit</Button>
+          <Button onClick={onSubmit} className='bg-teal-600 hover:bg-teal-700 dark:text-white dark:bg-green-600'>Submit</Button>
         </div>
       </div>
     </div>
